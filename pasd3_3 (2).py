@@ -19,10 +19,6 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-# Load model
-with open("catboost_model_quikr.pkl", "rb") as f:
-    model = pickle.load(f)
-
 # Konfigurasi halaman
 st.set_page_config(page_title="Prediksi Harga Mobil Bekas", layout="centered", page_icon="🚗")
 st.markdown("""
@@ -43,6 +39,10 @@ st.title("Prediksi Harga Mobil Bekas")
 st.markdown("""
 Gunakan aplikasi ini untuk memprediksi harga mobil bekas berdasarkan data kendaraan Anda.
 """)
+
+# Load model
+with open("catboost_model_quikr.pkl", "rb") as f:
+    model = pickle.load(f)
 
 
 # Daftar nama mobil dan jenis bahan bakar yang valid
