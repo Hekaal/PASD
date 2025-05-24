@@ -12,33 +12,12 @@ import pandas as pd
 import numpy as np
 import pickle
 from catboost import CatBoostRegressor
-from PIL import Image
 
 import pickle
 import numpy as np
 import pandas as pd
 import streamlit as st
 
-# Konfigurasi halaman
-st.set_page_config(page_title="Prediksi Harga Mobil Bekas", layout="centered", page_icon="🚗")
-st.markdown("""
-    <style>
-    .main {background-color: #f9f9f9;}
-    .stButton button {background-color: #007bff; color: white; padding: 0.6em 1.2em; border-radius: 8px;}
-    .stButton button:hover {background-color: #0056b3;}
-    .stSelectbox, .stNumberInput, .stTextInput, .stSlider {
-        background-color: #ffffff;
-        border-radius: 10px;
-        padding: 1em;
-    }
-    </style>
-""", unsafe_allow_html=True)
-
-# Judul
-st.title("Prediksi Harga Mobil Bekas")
-st.markdown("""
-Gunakan aplikasi ini untuk memprediksi harga mobil bekas berdasarkan data kendaraan Anda.
-""")
 
 # Load model
 with open("catboost_model_quikr.pkl", "rb") as f:
